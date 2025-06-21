@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-color: rgb(254, 45, 31);
+  --primary-hover: rgb(230, 40, 28);
+  --primary-active: rgb(200, 35, 25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Poppins', sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+/* Primary Button Styles */
+.btn-primary {
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: white !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(254, 45, 31, 0.2) !important;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+  color: white !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(254, 45, 31, 0.3) !important;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+  background: var(--primary-active) !important;
+  border-color: var(--primary-active) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(254, 45, 31, 0.4) !important;
+}
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.font-48px{
+  font-size: 48px !important;
+  font-weight:700 !important;
+}
+.font-36px{
+  font-size: 36px !important;
+  font-weight:700 !important;
+}
+.font-18px{
+    font-size: 18px !important;
+  font-weight: 400 !important;
+
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
