@@ -1,4 +1,4 @@
-import { Card, Tag, Button } from "antd"
+import { Card, Button } from "antd"
 import { GithubOutlined, LinkOutlined } from "@ant-design/icons"
 import Link from "next/link"
 import Image from "next/image"
@@ -16,20 +16,20 @@ interface Project {
 export function Projects() {
   const projects: Project[] = [
     {
-      title: "E-Commerce Platform",
+      title: "OXO Packaging",
       description:
         "Full-featured e-commerce platform built with Laravel and Vue.js. Includes user authentication, product management, shopping cart, and payment integration.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/assets/images/projects/oxo.png",
       technologies: ["Laravel", "Vue.js", "MySQL", "Stripe API", "Tailwind CSS"],
       features: ["User Authentication", "Product Catalog", "Shopping Cart", "Payment Processing", "Admin Dashboard"],
       liveUrl: "https://oxopackaging.com/",
       githubUrl: "https://github.com/username/ecommerce",
     },
     {
-      title: "Task Management System",
+      title: "Versatile AI Agents for Devs, Businesses & Creators",
       description:
         "Collaborative task management application with real-time updates. Built using Laravel Livewire for dynamic interactions and MySQL for data persistence.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/assets/images/projects/ithinqai.png",
       technologies: ["Laravel", "Livewire", "MySQL", "Bootstrap", "JavaScript"],
       features: [
         "Real-time Updates",
@@ -38,14 +38,14 @@ export function Projects() {
         "Progress Tracking",
         "File Attachments",
       ],
-      liveUrl: "https://example.com",
+      liveUrl: "https://ithinqai.com",
       githubUrl: "https://github.com/username/task-manager",
     },
     {
-      title: "Restaurant Booking System",
+      title: "Renovbien",
       description:
         "Online reservation system for restaurants with table management, booking calendar, and customer notifications. Responsive design converted from Figma mockups.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/assets/images/projects/renov.png",
       technologies: ["Laravel", "Vue.js", "MySQL", "Ant Design", "Email APIs"],
       features: [
         "Table Reservations",
@@ -54,18 +54,18 @@ export function Projects() {
         "Customer Management",
         "Reporting Dashboard",
       ],
-      liveUrl: "https://example.com",
+      liveUrl: "https://renovbien.com/",
       githubUrl: "https://github.com/username/restaurant-booking",
     },
     {
-      title: "Content Management System",
+      title: "Lacuna Market Place",
       description:
         "Custom CMS built for content creators with drag-and-drop page builder, SEO optimization, and multi-user support. Designed with modern UI/UX principles.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/assets/images/projects/lacuna.png",
       technologies: ["Laravel", "React.js", "MySQL", "Tailwind CSS", "Redis"],
       features: ["Page Builder", "SEO Tools", "Multi-user Support", "Media Management", "Analytics Dashboard"],
       liveUrl: "https://example.com",
-      githubUrl: "https://github.com/username/cms",
+      githubUrl: "https://github.com/shahzadali50/Lacuna_Marketplace",
     },
   ]
 
@@ -104,23 +104,23 @@ export function Projects() {
                       Live Demo
                     </Button>
                   </Link>,
-                  <Link key="code" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Button
-                      className="btn-outline flex items-center justify-center"
-                      aria-label={`View source code of ${project.title}`}
-                      icon={<GithubOutlined />}
-                    >
-                      Code
-                    </Button>
-                  </Link>,
+                  // <Link key="code" href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                  //   <Button
+                  //     className="btn-outline flex items-center justify-center"
+                  //     aria-label={`View source code of ${project.title}`}
+                  //     icon={<GithubOutlined />}
+                  //   >
+                  //     Code
+                  //   </Button>
+                  // </Link>,
                 ]}
               >
                 <Card.Meta
                   title={<span className="text-xl text-gray-900">{project.title}</span>}
-                  description={<p className="text-gray-600 mb-4 font-18px">{project.description}</p>}
+                  // description={<p className="text-gray-600 mb-4 font-18px">{project.description}</p>}
                 />
 
-                <div className="mt-4 mb-4">
+                {/* <div className="mt-4 mb-4">
                   <h4 className="font-semibold text-gray-900 mb-2">Technologies:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
@@ -129,22 +129,22 @@ export function Projects() {
                       </Tag>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <h4 className="font-semibold text-gray-900 mb-2">Key Features:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-600 text-sm">
                     {project.features.map((feature) => (
                       <li key={feature}>{feature}</li>
                     ))}
                   </ul>
-                </div>
+                </div> */}
               </Card>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <Link href="https://github.com/username" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/shahzadali50?tab=repositories" target="_blank" rel="noopener noreferrer">
               <Button
                 size="large"
                 className="btn-outline flex items-center justify-center"

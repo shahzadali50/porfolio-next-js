@@ -130,7 +130,7 @@ export function Navigation() {
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
                   onKeyDown={(e) => handleKeyDown(e, item.href)}
-                  style={{ margin: "0px 10px", cursor: "pointer" }}
+                  style={{ margin: "0px 20px", cursor: "pointer" }}
                   className={`text-gray-700 hover:text-primary transition-colors font-medium relative ${
                     activeSection === item.href.substring(1) ? "text-primary font-semibold" : ""
                   }`}
@@ -163,7 +163,7 @@ export function Navigation() {
       <Drawer
         title={
           <span className="text-xl font-bold text-gray-900">
-            Dev<span className="text-primary">Portfolio</span>
+            Shahzad<span className="text-primary">Ali</span>
           </span>
         }
         placement="left"

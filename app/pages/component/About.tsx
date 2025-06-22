@@ -11,7 +11,8 @@ export function About() {
         <Row gutter={[48, 48]} align="middle">
           {/* Image Section */}
           <Col xs={24} lg={12}>
-             <Image
+          <h2 className="block lg:hidden font-36px text-gray-900">About Me</h2>
+          <Image
               src="/assets/images/profile-3.jpg"
               alt="Developer Profile"
               className="object-cover"
@@ -22,7 +23,7 @@ export function About() {
 
           {/* Text Section */}
           <Col xs={24} lg={12}>
-            <h2 className="font-36px text-gray-900 mb-6">About Me</h2>
+            <h2 className="font-36px text-gray-900 mb-6 hidden lg:block">About Me</h2>
 
             <div className="text-base text-gray-600 space-y-4 leading-relaxed">
               <p className="font-18px">

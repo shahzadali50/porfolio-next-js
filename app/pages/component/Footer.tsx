@@ -46,10 +46,12 @@ export function Footer() {
   ]
 
   const quickLinks = [
-    { href: "#about", label: "About" },
-    { href: "#skills", label: "Skills" },
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About Us" },
+    { href: "#skills", label: "My Skills" },
     { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
+    { href: "#faq", label: "FAQ" },
+    { href: "#contact", label: "Contact Us" },
   ]
 
   return (
@@ -127,10 +129,13 @@ export function Footer() {
 
         {/* Footer Bottom */}
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-          <div className="flex items-center gap-2">
-            <span>© {currentYear} Shahzad Ali. Made with</span>
+        <div className="flex items-center gap-2">
+            <span>© {currentYear} Crafted with</span>
             <HeartFilled className="text-primary" />
-            <span>using Laravel & Vue.js</span>
+            <span>Laravel & Vue.js</span>
+          </div>
+          <div>
+            {/* <span>Built by Shahzad Ali</span> */}
           </div>
 
           <div className="flex items-center gap-2">

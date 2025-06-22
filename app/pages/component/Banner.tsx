@@ -3,6 +3,7 @@
 import { Button, Typography, Row, Col } from "antd"
 import { ArrowRightOutlined, DownloadOutlined } from "@ant-design/icons"
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./Banner.module.css"
 
 const { Title, Paragraph } = Typography
@@ -50,19 +51,16 @@ export function Banner() {
                 View My Work
               </Button>
 
-              <a
-                href="/assets/cv/Shahzad-Ali.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link href="/cv/Shahzad-Ali.pdf" target="_blank" rel="noopener noreferrer">
+              <Button
+                size="large"
+                icon={<DownloadOutlined />}
+                aria-label="Download Resume"
               >
-                <Button
-                  size="large"
-                  icon={<DownloadOutlined />}
-                  aria-label="Download Resume"
-                >
-                  Download Resume
-                </Button>
-              </a>
+                Download Resume
+              </Button>
+            </Link>
+
             </div>
           </Col>
 
