@@ -57,7 +57,7 @@ export function Banner() {
                 icon={<DownloadOutlined />}
                 aria-label="Download Resume"
               >
-                Download Resume
+               Resume
               </Button>
             </Link>
 
