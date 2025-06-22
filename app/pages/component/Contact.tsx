@@ -47,7 +47,7 @@ export function Contact() {
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-gray-900">Let&apos;s Work Together</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-              I'm always open to new opportunities and challenging projects. Whether you need support on your team or want to discuss a project idea, feel free to reach out — I'd love to connect.
+              I am always open to new opportunities and challenging projects. Whether you need support on your team or want to discuss a project idea, feel free to reach out — I did love to connect.
               </p>
 
               <div className="space-y-6">

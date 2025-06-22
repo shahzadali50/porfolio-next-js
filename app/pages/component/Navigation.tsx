@@ -18,11 +18,11 @@ export function Navigation() {
 
   const navItems: NavItem[] = [
     { href: "#home", label: "Home" },
-    { href: "#about", label: "About Me" },
+    { href: "#about", label: "About Us" },
     { href: "#skills", label: "My Skills" },
     { href: "#projects", label: "Projects" },
     { href: "#faq", label: "FAQ" },
-    { href: "#contact", label: "Contact Me" },
+    { href: "#contact", label: "Contact Us" },
   ]
 
   // Handle scroll position for navbar shadow

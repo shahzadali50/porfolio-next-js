@@ -1,23 +1,9 @@
 "use client"
 
-import { Tag, Row, Col } from "antd"
+import {  Row, Col } from "antd"
 import Image from "next/image"
 
 export function About() {
-  const skills = [
-    "Laravel",
-    "Vue.js",
-    "PHP",
-    "JavaScript",
-    "MySQL",
-    "Tailwind CSS",
-    "Bootstrap",
-    "React.js",
-    "Livewire",
-    "Figma",
-    "Adobe XD",
-    "Git",
-  ]
 
   return (
     <section id="about" className="py-20 bg-white">
