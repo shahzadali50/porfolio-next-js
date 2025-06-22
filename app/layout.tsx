@@ -69,9 +69,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en"> 
       <head>
-        <meta name="description" content="Shahzad Ali is a passionate Full Stack Developer specializing in Laravel, Vue.js, and Next.js. Explore projects, skills, experience, and contact for freelance or remote opportunities. Building secure, scalable, and user-friendly web applications." />
+        <meta name="description" content="Shahzad Ali – Full Stack Developer skilled in Laravel, Vue.js & Next.js. Explore projects, skills, and contact for freelance or remote work." />
+         {/* Favicon */}
+         <link rel="icon" href="/assets/images/projects/oxo.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
