@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shahzad Ali Portfolio",
+  title: "Shahzad Ali",
   description:
     "Shahzad Ali is a passionate Full Stack Developer specializing in Laravel, Vue.js, and Next.js. Explore projects, skills, experience, and contact for freelance or remote opportunities. Building secure, scalable, and user-friendly web applications.",
   keywords: [
