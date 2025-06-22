@@ -24,7 +24,7 @@ export function Faq() {
       answer: (
         <Paragraph className="text-gray-600">
           I offer a comprehensive range of web development services including full-stack development with Laravel and
-          Vue.js, custom API development, database design, UI/UX implementation, and website maintenance. Whether you
+          Vue.js, and more custom API development, database design, UI/UX implementation, and website maintenance. Whether you
           need a complete web application or specific features for an existing project, I can help bring your vision to
           life with clean, efficient code.
         </Paragraph>
@@ -55,7 +55,7 @@ export function Faq() {
       answer: (
         <Paragraph className="text-gray-600">
           Project timelines vary depending on complexity, scope, and requirements. A simple website might take 2-4
-          weeks, while a complex web application could take 2-6 months. During our initial consultation, I&apos;ll provide a
+          weeks, while a complex web application could take 1-3 months. During our initial consultation, I&apos;ll provide a
           detailed timeline based on your specific project needs. I&apos;m committed to delivering high-quality work within
           agreed timeframes and will keep you updated on progress throughout development.
         </Paragraph>

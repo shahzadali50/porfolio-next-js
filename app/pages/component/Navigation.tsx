@@ -107,7 +107,7 @@ const observerCallback = (entries: IntersectionObserverEntry[]) => {
               className="text-xl md:text-2xl font-bold text-gray-900"
               aria-label="DevPortfolio Home"
             >
-              Dev<span className="text-primary">Portfolio</span>
+              Shahzad<span className="text-primary">Ali</span>
             </Link>
 
             {/* Desktop Nav */}

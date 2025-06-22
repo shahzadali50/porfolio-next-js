@@ -29,17 +29,17 @@ export function Footer() {
 
   const socialLinks = [
     {
-      href: "https://github.com/username",
+      href: "https://github.com/shahzadali50",
       icon: <GithubOutlined />,
       label: "GitHub",
     },
     {
-      href: "https://linkedin.com/in/username",
+      href: "https://www.linkedin.com/in/shahzad-ali-developer/",
       icon: <LinkedinOutlined />,
       label: "LinkedIn",
     },
     {
-      href: "mailto:your.email@example.com",
+      href: "mailto:shahzaddeveloper50@gmail.com",
       icon: <MailOutlined />,
       label: "Email",
     },
@@ -48,7 +48,6 @@ export function Footer() {
   const quickLinks = [
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
-    { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
     { href: "#contact", label: "Contact" },
   ]
@@ -60,11 +59,11 @@ export function Footer() {
           {/* Brand + Socials */}
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold mb-2">
-              Dev<span className="text-primary">Portfolio</span>
+              Shahzad<span className="text-primary">Ali</span>
             </h3>
             <p className="text-gray-400 mb-4 leading-relaxed">
-              Full-stack developer specializing in Laravel and Vue.js. Creating modern, scalable web applications with clean
-              code and beautiful design.
+            Full-Stack Developer | Expert in Laravel & Vue.js
+            Building secure, scalable, and user-friendly web applications with clean code.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
@@ -105,12 +104,12 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
             <div className="space-y-3 text-gray-400 text-sm">
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:shahzaddeveloper50@gmail.com"
                 className="flex items-center gap-2 hover:text-primary transition"
                 aria-label="Send email"
               >
                 <MailOutlined className="text-primary" />
-                your.email@example.com
+                shahzaddeveloper50@gmail.com
               </a>
               <p>Available for freelance work</p>
               <p>Remote & On-site projects</p>
@@ -129,7 +128,7 @@ export function Footer() {
         {/* Footer Bottom */}
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <div className="flex items-center gap-2">
-            <span>© {currentYear} DevPortfolio. Made with</span>
+            <span>© {currentYear} Shahzad Ali. Made with</span>
             <HeartFilled className="text-primary" />
             <span>using Laravel & Vue.js</span>
           </div>

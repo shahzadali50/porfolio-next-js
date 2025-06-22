@@ -26,7 +26,7 @@ export function About() {
           {/* Image Section */}
           <Col xs={24} lg={12}>
              <Image
-              src="/assets/images/user.jpg"
+              src="/assets/images/profile-3.jpg"
               alt="Developer Profile"
               className="object-cover"
               width={500} // Specify the width (in pixels)
@@ -40,21 +40,17 @@ export function About() {
 
             <div className="text-base text-gray-600 space-y-4 leading-relaxed">
               <p className="font-18px">
-                I&apos;m a passionate full-stack developer with over 3 years of experience in creating modern web
-                applications. I specialize in Laravel for robust backend development and Vue.js for dynamic,
-                responsive frontend experiences.
+                I&apos;m <span className="font-bold"> Shahzad Ali</span> , a professional PHP Laravel Developer and Full-Stack Engineer with over 3 years of hands-on experience building secure, scalable, and high-performance web applications. I specialize in developing powerful backend systems using Laravel, paired with dynamic frontends using Vue.js.
               </p>
               <p className="font-18px">
-                My expertise extends beyond coding to include UI/UX design using Figma and Adobe XD, ensuring that
-                every application I build is not only functional but also visually appealing and user-friendly.
+              My expertise includes handling large datasets, integrating complex APIs, and delivering enterprise-level solutions for businesses across various industries. I take pride in writing clean, maintainable code and following best practices to ensure long-term reliability.
               </p>
               <p className="font-18px">
-                I&apos;m committed to writing clean, maintainable code and staying up-to-date with the latest industry
-                trends and best practices.
+              Passionate about technology and problem-solving, I’m committed to turning ideas into impactful digital products that drive real results.
               </p>
             </div>
 
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Technical Skills</h3>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill) => (
@@ -63,7 +59,7 @@ export function About() {
                   </Tag>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             <Row gutter={[16, 16]} className="mt-10">
               <Col span={8}>

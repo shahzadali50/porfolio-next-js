@@ -47,8 +47,7 @@ export function Contact() {
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-gray-900">Let&apos;s Work Together</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                I&apos;m always interested in new opportunities and exciting projects. Whether you need a full-stack
-                developer for your team or want to discuss a project idea, I&apos;d love to hear from you.
+              I'm always open to new opportunities and challenging projects. Whether you need support on your team or want to discuss a project idea, feel free to reach out — I'd love to connect.
               </p>
 
               <div className="space-y-6">
@@ -58,7 +57,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Email</h4>
-                    <p className="text-gray-600">your.email@example.com</p>
+                    <p className="text-gray-600">shahzaddeveloper50@gmail.com</p>
                   </div>
                 </div>
 
@@ -68,7 +67,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Phone</h4>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">+92 348 4498582</p>
                   </div>
                 </div>
 
@@ -78,7 +77,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Location</h4>
-                    <p className="text-gray-600">Available for Remote Work</p>
+                    <p className="text-gray-600">Lahore, Punjab Pakistan</p>
                   </div>
                 </div>
               </div>
@@ -87,7 +86,7 @@ export function Contact() {
                 <h4 className="font-semibold text-gray-900 mb-4">Follow Me</h4>
                 <div className="flex gap-4">
                   <Link
-                    href="https://github.com/username"
+                    href="https://github.com/shahzadali50"
                     className="w-10 h-10 bg-gray-900 text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -96,7 +95,7 @@ export function Contact() {
                     <GithubOutlined className="text-lg" aria-hidden="true" />
                   </Link>
                   <Link
-                    href="https://linkedin.com/in/username"
+                    href="https://www.linkedin.com/in/shahzad-ali-developer/"
                     className="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center hover:bg-primary-dark transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"

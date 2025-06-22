@@ -22,7 +22,7 @@ export function Projects() {
       image: "/placeholder.svg?height=300&width=500",
       technologies: ["Laravel", "Vue.js", "MySQL", "Stripe API", "Tailwind CSS"],
       features: ["User Authentication", "Product Catalog", "Shopping Cart", "Payment Processing", "Admin Dashboard"],
-      liveUrl: "https://example.com",
+      liveUrl: "https://oxopackaging.com/",
       githubUrl: "https://github.com/username/ecommerce",
     },
     {
