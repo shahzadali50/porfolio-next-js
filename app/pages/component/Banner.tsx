@@ -4,6 +4,7 @@ import { Button, Typography, Row, Col } from "antd"
 import { ArrowRightOutlined, DownloadOutlined } from "@ant-design/icons"
 import Image from "next/image"
 import styles from "./Banner.module.css"
+
 const { Title, Paragraph } = Typography
 
 export function Banner() {
@@ -17,22 +18,12 @@ export function Banner() {
     }
   }
 
-  const handleDownloadResume = () => {
-    window.open('/resume.pdf', '_blank')
-  }
-
   return (
-    <section
-      id="home"
-      className={styles.bannerSection}
-    >
+    <section id="home" className={styles.bannerSection}>
       <div className={styles.bannerContainer}>
         <Row gutter={[32, 32]} align="middle">
           {/* Text Section */}
-          <Col
-            xs={{ span: 24, order: 2 }}
-            lg={{ span: 12, order: 1 }}
-          >
+          <Col xs={{ span: 24, order: 2 }} lg={{ span: 12, order: 1 }}>
             <Title level={1} className="font-48px" style={{ marginBottom: 24 }}>
               Build Fast <br />
               <span className="text-primary">Applications</span> <br />
@@ -40,10 +31,10 @@ export function Banner() {
             </Title>
 
             <Paragraph style={{ fontSize: 18, color: "#595959" }}>
-              Professional  PHP Laravel Developer and Full-Stack Engineer with a focus on crafting secure, scalable, and high-performance web applications. Proficient in Laravel and Vue.js
+              PHP Laravel Developer and Full-Stack Engineer with a focus on crafting secure, scalable, and high-performance web applications. Proficient in Laravel and Vue.js.
             </Paragraph>
             <Paragraph style={{ fontSize: 18, color: "#595959", marginBottom: 32 }}>
-              with demonstrated expertise in handling large datasets, integrating complex APIs,  and delivering enterprise-grade solutions.
+              Demonstrated expertise in handling large datasets, integrating complex APIs, and delivering enterprise-grade solutions.  
               Driven by a passion for transforming ideas into impactful digital experiences.
             </Paragraph>
 
@@ -58,16 +49,24 @@ export function Banner() {
               >
                 View My Work
               </Button>
-              <Button
-                size="large"
-                onClick={handleDownloadResume}
-                icon={<DownloadOutlined />}
-                aria-label="Download Resume"
+
+              <a
+                href="/assets/cv/Shahzad-Ali.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Download Resume
-              </Button>
+                <Button
+                  size="large"
+                  icon={<DownloadOutlined />}
+                  aria-label="Download Resume"
+                >
+                  Download Resume
+                </Button>
+              </a>
             </div>
           </Col>
+
+          {/* Image Section */}
           <Col
             xs={{ span: 24, order: 1 }}
             lg={{ span: 12, order: 2 }}

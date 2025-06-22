@@ -20,7 +20,6 @@ export function Navigation() {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About Me" },
     { href: "#skills", label: "My Skills" },
-    { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
     { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "Contact Me" },
@@ -29,17 +28,32 @@ export function Navigation() {
   // Handle scroll position for navbar shadow
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 50)
+    // Fallback: update activeSection based on scroll position
+    const sections = document.querySelectorAll("section[id]")
+    let currentSection = ""
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect()
+      if (rect.top <= 70 && rect.bottom > 70) {
+        currentSection = section.id
+      }
+    })
+    if (currentSection) setActiveSection(currentSection)
   }, [])
 
   // Smooth scroll to section
   const handleNavClick = useCallback((href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      const headerHeight = 64
-      const elementTop = element.getBoundingClientRect().top + window.scrollY - headerHeight
-      window.scrollTo({ top: elementTop, behavior: "smooth" })
+    if (href.startsWith("#")) {
+      const element = document.querySelector(href)
+      if (element) {
+        const headerHeight = 64
+        const elementTop = element.getBoundingClientRect().top + window.scrollY - headerHeight
+        window.scrollTo({ top: elementTop, behavior: "smooth" })
+      }
+      setActiveSection(href.substring(1))
+      setIsOpen(false)
+    } else {
+      window.open(href, "_blank")
     }
-    setIsOpen(false)
   }, [])
 
   const handleKeyDown = useCallback(
@@ -62,19 +76,18 @@ export function Navigation() {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-20% 0px -70% 0px",
+      rootMargin: "-30% 0px -60% 0px",
       threshold: 0.1,
     }
-const observerCallback = (entries: IntersectionObserverEntry[]) => {
-  const visible = entries
-    .filter((entry) => entry.isIntersecting)
-    .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
 
-  if (visible.length > 0) {
-    setActiveSection(visible[0].target.id)
-  }
-}
-
+      if (visible.length > 0) {
+        setActiveSection(visible[0].target.id)
+      }
+    }
 
     if (observerRef.current) observerRef.current.disconnect()
 
