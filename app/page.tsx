@@ -8,6 +8,7 @@ import { Projects } from "./pages/component/Projects";
 import { Faq } from "./pages/component/Faq"; 
 import { Contact } from "./pages/component/Contact"; 
 import { Footer } from "./pages/component/Footer"; 
+import { ScrollToTop } from "./pages/component/ScrollToTop";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
     <Faq/>
     <Contact/>
     <Footer/>
+    <ScrollToTop />
     </>
   );
 }

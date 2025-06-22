@@ -5,7 +5,6 @@ import {
   GithubOutlined,
   LinkedinOutlined,
   MailOutlined,
-  ArrowUpOutlined,
   HeartFilled,
 } from "@ant-design/icons"
 import Link from "next/link"
@@ -13,10 +12,6 @@ import { useCallback } from "react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-
-  const handleScrollToTop = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }, [])
 
   const handleNavClick = useCallback((href: string) => {
     const element = document.querySelector(href)
@@ -136,18 +131,6 @@ export function Footer() {
           </div>
           <div>
             {/* <span>Built by Shahzad Ali</span> */}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span>Back to top</span>
-            <Button
-              type="text"
-              size="small"
-              onClick={handleScrollToTop}
-              icon={<ArrowUpOutlined />}
-              className="text-primary hover:border-primary transition"
-              aria-label="Scroll to top"
-            />
           </div>
         </div>
       </div>
