@@ -13,7 +13,7 @@ export function About() {
           <Col xs={24} lg={12}>
           <h2 className="block lg:hidden font-36px text-gray-900">About Me</h2>
           <Image
-              src="/assets/images/profile-2.jpg"
+              src="/assets/images/profile-3.jpg"
               alt="Developer Profile"
               className="object-cover"
               width={500} // Specify the width (in pixels)
