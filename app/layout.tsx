@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description:
       "Explore the portfolio of Shahzad Ali, a Full Stack Developer with expertise in Laravel, Vue.js, and Next.js. View projects, skills, and contact for collaboration.",
     url: "https://your-portfolio-domain.com",
-    siteName: "Shahzad Ali Portfolio",
+    siteName: "Shahzad Ali",
     images: [
       {
         url: "https://your-portfolio-domain.com/og-image.jpg",
