@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Shahzad Ali", url: "https://github.com/shahzadali50" }],
   creator: "Shahzad Ali",
   openGraph: {
-    title: "Shahzad Ali | Full Stack Developer Portfolio",
+    title: "Shahzad Ali",
     description:
       "Explore the portfolio of Shahzad Ali, a Full Stack Developer with expertise in Laravel, Vue.js, and Next.js. View projects, skills, and contact for collaboration.",
     url: "https://your-portfolio-domain.com",
