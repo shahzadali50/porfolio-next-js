@@ -44,7 +44,7 @@ export function Skills() {
     <section id="skills" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-36px text-center mb-12 text-gray-900">Technical Skills</h2>
+          <h2 className="font-36px text-center mb-4 text-gray-900">Technical Skills</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skillCategories.map((category) => (
@@ -65,7 +65,7 @@ export function Skills() {
           </div>
 
           <div className="mt-16 text-center">
-            <h3 className="text-2xl font-semibold mb-8 text-gray-900">Experience Level</h3>
+            <h2 className="font-36px text-center mb-4 text-gray-900">Experience Level</h2>
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="text-4xl font-bold text-primary mb-2">3+</div>
