@@ -25,7 +25,7 @@ export function Skills() {
     },
     {
       title: "Design Tools",
-      skills: ["Figma", "Adobe XD", "UI/UX Design", "Prototyping", "Wireframing"],
+      skills: ["Figma", "Adobe XD", "UI/UX Design",],
       color: "orange",
     },
     {

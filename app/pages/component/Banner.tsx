@@ -70,14 +70,17 @@ export function Banner() {
             lg={{ span: 12, order: 2 }}
             style={{ textAlign: "center" }}
           >
-            <div className="relative w-full h-64 md:h-96 lg:h-[450px]">
+            <div className="relative w-full h-64 md:h-96 lg:h-[400px] floating-image">
               <Image
                 src="/assets/images/laravel-hero.webp"
                 alt="Laravel Framework Hero Illustration"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
-                style={{ objectFit: 'contain' }}
+                style={{ 
+                  objectFit: 'contain',
+                  animation: 'moveUpDown 3s ease-in-out infinite'
+                }}
               />
             </div>
           </Col>
