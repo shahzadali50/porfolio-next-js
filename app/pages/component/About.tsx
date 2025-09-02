@@ -27,7 +27,7 @@ export function About() {
 
             <div className="text-base text-gray-600 space-y-4 leading-relaxed">
               <p className="font-18px">
-                I&apos;m <span className="font-bold"> Shahzad Ali</span> , a professional PHP Laravel Developer and Full-Stack Engineer with over 3 years of hands-on experience building secure, scalable, and high-performance web applications. I specialize in developing powerful backend systems using Laravel, paired with dynamic frontends using Vue.js.
+                I&apos;m <span className="font-bold"> Shahzad Ali</span> , a professional PHP Laravel Developer and Full-Stack Engineer with over 2+ years of hands-on experience building secure, scalable, and high-performance web applications. I specialize in developing powerful backend systems using Laravel, paired with dynamic frontends using Vue.js.
               </p>
               <p className="font-18px">
               My expertise includes handling large datasets, integrating complex APIs, and delivering enterprise-level solutions for businesses across various industries. I take pride in writing clean, maintainable code and following best practices to ensure long-term reliability.
