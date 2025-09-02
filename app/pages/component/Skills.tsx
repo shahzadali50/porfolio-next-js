@@ -68,11 +68,11 @@ export function Skills() {
             <h2 className="font-36px text-center mb-4 text-gray-900">Experience Level</h2>
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">3+</div>
+                <div className="text-4xl font-bold text-primary mb-2">2+</div>
                 <div className="text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-green-600 mb-2">50+</div>
+                <div className="text-4xl font-bold text-green-600 mb-2">30+</div>
                 <div className="text-gray-600">Projects Completed</div>
               </div>
               <div className="text-center">
