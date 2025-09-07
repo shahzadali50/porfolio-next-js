@@ -27,21 +27,17 @@ export function Contact() {
   const handleSubmit = useCallback(
     (values: FormValues) => {
       console.log("Form values:", values)
-      // 👇 Gmail link with subject & body
-      const mailtoLink = `mailto:shahzaddeveloper50@gmail.com?subject=${encodeURIComponent(
+  
+      const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=shahzaddeveloper50@gmail.com&su=${encodeURIComponent(
         values.subject,
       )}&body=Name: ${encodeURIComponent(values.name)}%0AEmail: ${encodeURIComponent(
         values.email,
       )}%0A%0A${encodeURIComponent(values.message)}`
-
   
-      // ✅ Option 1: Open Gmail
-      window.open(mailtoLink, "_blank")
+      // 👇 Always open Gmail compose in new tab
+      window.open(gmailLink, "_blank")
   
-      // ✅ Option 2: Open WhatsApp
-      // window.open(whatsappLink, "_blank")
-  
-      message.success("This form data is not stored in the database. Please continue in Gmail or WhatsApp.")
+      message.success("Redirecting you to Gmail compose window...")
       form.resetFields()
     },
     [form],
