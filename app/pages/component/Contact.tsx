@@ -9,7 +9,7 @@ import {
   LinkedinOutlined,
 } from "@ant-design/icons"
 import Link from "next/link"
-import { useCallback } from "react"
+import { useCallback, useState } from "react"
 import emailjs from "@emailjs/browser"
 import type { ValidateErrorEntity } from "rc-field-form/lib/interface"
 
@@ -24,15 +24,22 @@ interface FormValues {
 
 export function Contact() {
   const [form] = Form.useForm<FormValues>()
+  const [loading, setLoading] = useState(false)
 
   // ✅ Handle Submit via EmailJS
   const handleSubmit = useCallback(
     (values: FormValues) => {
       console.log("Form values:", values)
+      
+      // Set loading state to true
+      setLoading(true)
+      
+      // Show loading message
+      const loadingMessage = message.loading("Please wait, sending message...", 0)
 
       emailjs
         .send(
-          "service_7yegn6h",   // Service ID
+          "service_q8e1zio",   // Service ID
           "template_dqftfhs",  // Template ID
           {
             name: values.name,
@@ -45,10 +52,18 @@ export function Contact() {
         )
         .then(
           () => {
-            message.success("✅ Message sent successfully to Gmail!")
+            // Hide loading message
+            loadingMessage()
+            // Set loading state to false
+            setLoading(false)
+            message.success("Your inquiry has been sent successfully")
             form.resetFields()
           },
           (error) => {
+            // Hide loading message
+            loadingMessage()
+            // Set loading state to false
+            setLoading(false)
             console.error("EmailJS Error:", error)
             message.error("❌ Failed to send message. Please try again.")
           }
@@ -192,8 +207,10 @@ export function Contact() {
                     size="large"
                     className="btn-primary w-full"
                     aria-label="Send message"
+                    loading={loading}
+                    disabled={loading}
                   >
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </Form.Item>
               </Form>
