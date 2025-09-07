@@ -27,11 +27,31 @@ export function Contact() {
   const handleSubmit = useCallback(
     (values: FormValues) => {
       console.log("Form values:", values)
-      message.success("Thank you for your message! I'll get back to you soon.")
+  
+      // 👇 Gmail link with subject & body
+      const mailtoLink = `mailto:shahzaddeveloper50@gmail.com?subject=${encodeURIComponent(
+        values.subject,
+      )}&body=Name: ${encodeURIComponent(values.name)}%0AEmail: ${encodeURIComponent(
+        values.email,
+      )}%0A%0A${encodeURIComponent(values.message)}`
+  
+      // 👇 WhatsApp link with prefilled message
+      const whatsappLink = `https://wa.me/923484498582?text=${encodeURIComponent(
+        `Name: ${values.name}\nEmail: ${values.email}\nSubject: ${values.subject}\n\n${values.message}`,
+      )}`
+  
+      // ✅ Option 1: Open Gmail
+      window.open(mailtoLink, "_blank")
+  
+      // ✅ Option 2: Open WhatsApp
+      // window.open(whatsappLink, "_blank")
+  
+      message.success("This form data is not stored in the database. Please continue in Gmail or WhatsApp.")
       form.resetFields()
     },
     [form],
   )
+  
 
   const handleSubmitError = useCallback((errorInfo: ValidateErrorEntity<FormValues>) => {
     console.log("Form validation failed:", errorInfo)
