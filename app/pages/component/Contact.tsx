@@ -33,11 +33,7 @@ export function Contact() {
       )}&body=Name: ${encodeURIComponent(values.name)}%0AEmail: ${encodeURIComponent(
         values.email,
       )}%0A%0A${encodeURIComponent(values.message)}`
-  
-      // 👇 WhatsApp link with prefilled message
-      const whatsappLink = `https://wa.me/923484498582?text=${encodeURIComponent(
-        `Name: ${values.name}\nEmail: ${values.email}\nSubject: ${values.subject}\n\n${values.message}`,
-      )}`
+
   
       // ✅ Option 1: Open Gmail
       window.open(mailtoLink, "_blank")
