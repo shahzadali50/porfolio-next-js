@@ -1,28 +1,25 @@
 "use client";
-import { Navigation } from "./pages/component/Navigation";
-import { Banner } from "./pages/component/Banner";
-import { About } from "./pages/component/About"; 
-import { Skills } from "./pages/component/Skills"; 
+// import { Navigation } from "./pages/component/Navigation";
+
 // import { Experience } from "./pages/component/Experience"; 
-import { Projects } from "./pages/component/Projects"; 
-import { Faq } from "./pages/component/Faq"; 
-import { Contact } from "./pages/component/Contact"; 
-import { Footer } from "./pages/component/Footer"; 
-import { ScrollToTop } from "./pages/component/ScrollToTop";
+
+import { Banner } from "./pages/component/Banner";
+import AboutUs from "./pages/AboutUs";
+import SkillsPage from "./pages/SkillsPage";
+import ProjectPage from "./pages/ProjectPage";
+import FAQ from "./pages/FAQ";
+import ContactUs from "./pages/ContactUs";
 
 export default function Home() {
   return (
     <>
-    <Navigation />
     <Banner/>
-    <About/>
-    <Skills/>
-    {/* <Experience/> */}
-    <Projects/>
-    <Faq/>
-    <Contact/>
-    <Footer/>
-    <ScrollToTop />
+    <AboutUs/>
+    <SkillsPage/>
+    <ProjectPage/>
+    <FAQ/>
+    <ContactUs/>
+
     </>
   );
 }

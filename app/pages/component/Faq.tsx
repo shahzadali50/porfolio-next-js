@@ -1,10 +1,11 @@
 "use client"
-
 import type React from "react"
 import { useState } from "react"
 import { Collapse, Typography } from "antd"
 import type { CollapseProps } from "antd"
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons"
+import Link from "next/link";
+
 
 const { Title, Paragraph } = Typography
 
@@ -155,22 +156,12 @@ export function Faq() {
             <Paragraph className="text-gray-600 mb-6">
               Don&apos;t see your question here? Feel free to reach out directly.
             </Paragraph>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                const contactSection = document.querySelector("#contact")
-                if (contactSection) {
-                  const headerHeight = 64
-                  const elementPosition =
-                    contactSection.getBoundingClientRect().top + window.pageYOffset - headerHeight
-                  window.scrollTo({ top: elementPosition, behavior: "smooth" })
-                }
-              }}
+            <Link
+              href="/contact-us"
               className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-300"
             >
               Ask a Question
-            </a>
+            </Link>
           </div>
         </div>
       </div>

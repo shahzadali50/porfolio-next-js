@@ -1,114 +1,31 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useCallback, useRef } from "react"
-import { Button, Drawer } from "antd"
-import { MenuOutlined, CloseOutlined } from "@ant-design/icons"
-import Link from "next/link"
-
-interface NavItem {
-  href: string
-  label: string
-}
+import { useState, useEffect } from "react";
+import { Button, Drawer } from "antd";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState("")
-  const observerRef = useRef<IntersectionObserver | null>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname(); // ✅ current path from Next.js router
 
-  const navItems: NavItem[] = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About Us" },
-    { href: "#skills", label: "My Skills" },
-    { href: "#projects", label: "Projects" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#contact", label: "Contact Us" },
-  ]
-
-  // Handle scroll position for navbar shadow
-  const handleScroll = useCallback(() => {
-    setIsScrolled(window.scrollY > 50)
-    // Fallback: update activeSection based on scroll position
-    const sections = document.querySelectorAll("section[id]")
-    let currentSection = ""
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect()
-      if (rect.top <= 70 && rect.bottom > 70) {
-        currentSection = section.id
-      }
-    })
-    if (currentSection) setActiveSection(currentSection)
-  }, [])
-
-  // Smooth scroll to section
-  const handleNavClick = useCallback((href: string) => {
-    if (href.startsWith("#")) {
-      const element = document.querySelector(href)
-      if (element) {
-        const headerHeight = 64
-        const elementTop = element.getBoundingClientRect().top + window.scrollY - headerHeight
-        window.scrollTo({ top: elementTop, behavior: "smooth" })
-      }
-      setActiveSection(href.substring(1))
-      setIsOpen(false)
-    } else {
-      window.open(href, "_blank")
-    }
-  }, [])
-
-  const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent, href: string) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault()
-        handleNavClick(href)
-      }
-    },
-    [handleNavClick]
-  )
-
-  // Add scroll event listener
+  // Navbar shadow on scroll
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [handleScroll])
-
-  // ScrollSpy logic using IntersectionObserver
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "-30% 0px -60% 0px",
-      threshold: 0.1,
-    }
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
-
-      if (visible.length > 0) {
-        setActiveSection(visible[0].target.id)
-      }
-    }
-
-    if (observerRef.current) observerRef.current.disconnect()
-
-    observerRef.current = new IntersectionObserver(observerCallback, observerOptions)
-
-    const sections = document.querySelectorAll("section[id]")
-    sections.forEach((section) => {
-      observerRef.current?.observe(section)
-    })
-
-    return () => {
-      observerRef.current?.disconnect()
-    }
-  }, [])
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      {/* Sticky Top Navbar */}
+      {/* Sticky Navbar */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-white/90 backdrop-blur-sm"
+          isScrolled
+            ? "bg-white/95 backdrop-blur-sm shadow-sm"
+            : "bg-white/90 backdrop-blur-sm"
         }`}
         aria-label="Main navigation"
       >
@@ -124,25 +41,63 @@ export function Navigation() {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center space-x-6">
-              {navItems.map((item) => (
-                <button
-                  key={item.href}
-                  onClick={() => handleNavClick(item.href)}
-                  onKeyDown={(e) => handleKeyDown(e, item.href)}
-                  style={{ margin: "0px 20px", cursor: "pointer" }}
-                  className={`text-gray-700 hover:text-primary transition-colors font-medium relative ${
-                    activeSection === item.href.substring(1) ? "text-primary font-semibold" : ""
-                  }`}
-                  aria-current={activeSection === item.href.substring(1) ? "page" : undefined}
-                >
-                  {item.label}
-                  {activeSection === item.href.substring(1) && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"></span>
-                  )}
-                </button>
-              ))}
+          {/* Desktop Nav */}
+            <div className="hidden md:flex items-center space-x-8">
+              <Link
+                href="/"
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
+                  pathname === "/" ? "text-primary font-semibold" : ""
+                }`}
+              >
+                Home
+              </Link>
+
+              <Link
+                href="/about-us"
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
+                  pathname === "/about-us" ? "text-primary font-semibold" : ""
+                }`}
+              >
+                About Us
+              </Link>
+
+              <Link
+                href="/skills"
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
+                  pathname === "/skills" ? "text-primary font-semibold" : ""
+                }`}
+              >
+                My Skills
+              </Link>
+
+              <Link
+                href="/projects"
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
+                  pathname === "/projects" ? "text-primary font-semibold" : ""
+                }`}
+              >
+                Projects
+              </Link>
+
+              <Link
+                href="/faq"
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
+                  pathname === "/faq" ? "text-primary font-semibold" : ""
+                }`}
+              >
+                FAQ
+              </Link>
+
+              <Link
+                href="/contact-us"
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
+                  pathname === "/contact" ? "text-primary font-semibold" : ""
+                }`}
+              >
+                Contact Us
+              </Link>
             </div>
+
 
             {/* Mobile Menu Toggle */}
             <div className="md:hidden">
@@ -173,24 +128,82 @@ export function Navigation() {
         className="md:hidden"
         id="mobile-menu"
       >
-        <div className="py-4">
-          {navItems.map((item) => (
-            <button
-              key={item.href}
-              className={`block w-full text-left px-4 py-3 font-medium transition-colors ${
-                activeSection === item.href.substring(1)
-                  ? "text-primary bg-gray-100 font-semibold border-l-4 border-primary"
-                  : "text-gray-700 hover:text-primary"
-              }`}
-              onClick={() => handleNavClick(item.href)}
-              onKeyDown={(e) => handleKeyDown(e, item.href)}
-              aria-current={activeSection === item.href.substring(1) ? "page" : undefined}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
+      <div className="py-4 space-y-2">
+  <Link
+    href="/"
+    onClick={() => setIsOpen(false)}
+    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
+      pathname === "/"
+        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+        : "text-gray-600 hover:text-gray-900"
+    }`}
+  >
+    Home
+  </Link>
+
+  <Link
+    href="/about-us"
+    onClick={() => setIsOpen(false)}
+    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
+      pathname === "/about-us"
+        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+        : "text-gray-600 hover:text-gray-900"
+    }`}
+  >
+    About Us
+  </Link>
+
+  <Link
+    href="/skills"
+    onClick={() => setIsOpen(false)}
+    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
+      pathname === "/skills"
+        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+        : "text-gray-600 hover:text-gray-900"
+    }`}
+  >
+    My Skills
+  </Link>
+
+  <Link
+    href="/projects"
+    onClick={() => setIsOpen(false)}
+    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
+      pathname === "/projects"
+        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+        : "text-gray-600 hover:text-gray-900"
+    }`}
+  >
+    Projects
+  </Link>
+
+  <Link
+    href="/faq"
+    onClick={() => setIsOpen(false)}
+    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
+      pathname === "/faq"
+        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+        : "text-gray-600 hover:text-gray-900"
+    }`}
+  >
+    FAQ
+  </Link>
+
+  <Link
+    href="/contact-us"
+    onClick={() => setIsOpen(false)}
+    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
+      pathname === "/contact-us"
+        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+        : "text-gray-600 hover:text-gray-900"
+    }`}
+  >
+    Contact Us
+  </Link>
+</div>
+
+
       </Drawer>
     </>
-  )
+  );
 }

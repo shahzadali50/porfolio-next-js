@@ -2,10 +2,14 @@
 import '@ant-design/v5-patch-for-react-19';
 import type { Metadata } from "next";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
-
+import { Navigation } from "./pages/component/Navigation";
 import { Geist, Geist_Mono } from "next/font/google";
+import NextTopLoader from 'nextjs-toploader';
+import { ScrollToTop } from "./pages/component/ScrollToTop";
+
 import "./globals.css";
 import "antd/dist/reset.css";
+import { Footer } from './pages/component/Footer';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -82,7 +86,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <AntdRegistry>{children}</AntdRegistry>
+          <AntdRegistry>
+          <NextTopLoader />
+        <Navigation />
+            {children}
+          <Footer />
+          <ScrollToTop />
+            </AntdRegistry>
       </body>
     </html>
   );

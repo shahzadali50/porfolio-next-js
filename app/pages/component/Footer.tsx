@@ -8,19 +8,11 @@ import {
   HeartFilled,
 } from "@ant-design/icons"
 import Link from "next/link"
-import { useCallback } from "react"
+import { usePathname } from "next/navigation"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-
-  const handleNavClick = useCallback((href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      const headerOffset = 64
-      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - headerOffset
-      window.scrollTo({ top: offsetTop, behavior: "smooth" })
-    }
-  }, [])
+  const pathname = usePathname()
 
   const socialLinks = [
     {
@@ -41,12 +33,12 @@ export function Footer() {
   ]
 
   const quickLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About Us" },
-    { href: "#skills", label: "My Skills" },
-    { href: "#projects", label: "Projects" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#contact", label: "Contact Us" },
+    { href: "/", label: "Home" },
+    { href: "/about-us", label: "About Us" },
+    { href: "/skills", label: "My Skills" },
+    { href: "/projects", label: "Projects" },
+    { href: "/faq", label: "FAQ" },
+    { href: "/contact-us", label: "Contact Us" },
   ]
 
   return (
@@ -59,8 +51,9 @@ export function Footer() {
               Shahzad<span className="text-primary">Ali</span>
             </h3>
             <p className="text-gray-400 mb-4 leading-relaxed">
-            Full-Stack Developer | Expert in Laravel & Vue.js
-            Building secure, scalable, and user-friendly web applications with clean code.
+              Full-Stack Developer | Expert in Laravel & Vue.js
+              Building secure, scalable, and user-friendly web applications
+              with clean code.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
@@ -81,19 +74,23 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-sm text-gray-400 leading-relaxed">
-            {quickLinks.map((link) => (
-              <li key={link.href}>
-                <button
-                  onClick={() => handleNavClick(link.href)}
-                  className="hover:text-white transition-colors duration-300 cursor-pointer"
-                  aria-label={`Go to ${link.label}`}
-                >
-                  {link.label}
-                </button>
-              </li>
-            ))}
-          </ul>
+            <ul className="space-y-2 text-sm leading-relaxed">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`transition-colors duration-300 ${
+                      pathname === link.href
+                        ? "text-primary font-semibold"
+                        : "text-gray-400 hover:text-white"
+                    }`}
+                    aria-label={`Go to ${link.label}`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact Info */}
@@ -111,26 +108,24 @@ export function Footer() {
               <p>Available for freelance work</p>
               <p>Remote & On-site projects</p>
             </div>
-            <Button
-              type="primary"
-              className="btn-primary mt-4"
-              onClick={() => handleNavClick("#contact")}
-              aria-label="Contact me"
-            >
-              Let&apos;s Work Together
-            </Button>
+            <Link href="/contact-us">
+              <Button
+                type="primary"
+                className="btn-primary mt-4"
+                aria-label="Contact me"
+              >
+                Let&apos;s Work Together
+              </Button>
+            </Link>
           </div>
         </div>
 
         {/* Footer Bottom */}
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <span>© {currentYear} Crafted with</span>
             <HeartFilled className="text-primary" />
             <span>Laravel & Vue.js</span>
-          </div>
-          <div>
-            {/* <span>Built by Shahzad Ali</span> */}
           </div>
         </div>
       </div>
