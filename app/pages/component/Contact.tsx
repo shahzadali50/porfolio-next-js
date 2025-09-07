@@ -27,7 +27,6 @@ export function Contact() {
   const handleSubmit = useCallback(
     (values: FormValues) => {
       console.log("Form values:", values)
-  
       // 👇 Gmail link with subject & body
       const mailtoLink = `mailto:shahzaddeveloper50@gmail.com?subject=${encodeURIComponent(
         values.subject,
