@@ -10,6 +10,7 @@ import {
 } from "@ant-design/icons"
 import Link from "next/link"
 import { useCallback } from "react"
+import emailjs from "@emailjs/browser"
 import type { ValidateErrorEntity } from "rc-field-form/lib/interface"
 
 const { TextArea } = Input
@@ -24,25 +25,38 @@ interface FormValues {
 export function Contact() {
   const [form] = Form.useForm<FormValues>()
 
+  // ✅ Handle Submit via EmailJS
   const handleSubmit = useCallback(
     (values: FormValues) => {
       console.log("Form values:", values)
-  
-      const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=shahzaddeveloper50@gmail.com&su=${encodeURIComponent(
-        values.subject,
-      )}&body=Name: ${encodeURIComponent(values.name)}%0AEmail: ${encodeURIComponent(
-        values.email,
-      )}%0A%0A${encodeURIComponent(values.message)}`
-  
-      // 👇 Always open Gmail compose in new tab
-      window.open(gmailLink, "_blank")
-  
-      message.success("Redirecting you to Gmail compose window...")
-      form.resetFields()
+
+      emailjs
+        .send(
+          "service_7yegn6h",   // Service ID
+          "template_dqftfhs",  // Template ID
+          {
+            name: values.name,
+            email: values.email,
+            subject: values.subject,
+            message: values.message,
+            time: new Date().toLocaleString(),
+          },
+          "F_KHy8nky5A24854J"  // Public Key
+        )
+        .then(
+          () => {
+            message.success("✅ Message sent successfully to Gmail!")
+            form.resetFields()
+          },
+          (error) => {
+            console.error("EmailJS Error:", error)
+            message.error("❌ Failed to send message. Please try again.")
+          }
+        )
+
     },
     [form],
   )
-  
 
   const handleSubmitError = useCallback((errorInfo: ValidateErrorEntity<FormValues>) => {
     console.log("Form validation failed:", errorInfo)
@@ -55,10 +69,13 @@ export function Contact() {
         <div className="max-w-6xl mx-auto">
           <h2 className="font-36px text-center mb-12 text-gray-900">Get In Touch</h2>
           <div className="grid lg:grid-cols-2 gap-12">
+            {/* Left Side */}
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-gray-900">Let&apos;s Work Together</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-              I am always open to new opportunities and challenging projects. Whether you need support on your team or want to discuss a project idea, feel free to reach out — I would love to connect..
+                I am always open to new opportunities and challenging projects. Whether you need
+                support on your team or want to discuss a project idea, feel free to reach out — I
+                would love to connect..
               </p>
 
               <div className="space-y-6">
@@ -115,10 +132,10 @@ export function Contact() {
                     <LinkedinOutlined className="text-lg" aria-hidden="true" />
                   </Link>
                 </div>
-                
               </div>
             </div>
 
+            {/* Right Side - Contact Form */}
             <Card title="Send Me a Message" className="border-0">
               <Form
                 form={form}
