@@ -22,11 +22,10 @@ export function Navigation() {
     <>
       {/* Sticky Navbar */}
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
             ? "bg-white/95 backdrop-blur-sm shadow-sm"
             : "bg-white/90 backdrop-blur-sm"
-        }`}
+          }`}
         aria-label="Main navigation"
       >
         <div className="container mx-auto px-4">
@@ -34,65 +33,59 @@ export function Navigation() {
             {/* Logo */}
             <Link
               href="/"
-              className="text-xl md:text-2xl font-bold text-gray-900"
+              className="text-2xl md:text-2xl font-bold text-gray-900"
               aria-label="DevPortfolio Home"
             >
               Shahzad<span className="text-primary">Ali</span>
             </Link>
 
             {/* Desktop Nav */}
-          {/* Desktop Nav */}
+            {/* Desktop Nav */}
             <div className="hidden md:flex items-center space-x-8">
               <Link
                 href="/"
-                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
-                  pathname === "/" ? "text-primary font-semibold" : ""
-                }`}
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${pathname === "/" ? "text-primary font-semibold" : ""
+                  }`}
               >
                 Home
               </Link>
 
               <Link
                 href="/about-us"
-                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
-                  pathname === "/about-us" ? "text-primary font-semibold" : ""
-                }`}
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${pathname === "/about-us" ? "text-primary font-semibold" : ""
+                  }`}
               >
                 About Us
               </Link>
 
               <Link
                 href="/skills"
-                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
-                  pathname === "/skills" ? "text-primary font-semibold" : ""
-                }`}
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${pathname === "/skills" ? "text-primary font-semibold" : ""
+                  }`}
               >
                 My Skills
               </Link>
 
               <Link
                 href="/projects"
-                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
-                  pathname === "/projects" ? "text-primary font-semibold" : ""
-                }`}
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${pathname === "/projects" ? "text-primary font-semibold" : ""
+                  }`}
               >
                 Projects
               </Link>
 
               <Link
                 href="/faq"
-                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
-                  pathname === "/faq" ? "text-primary font-semibold" : ""
-                }`}
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${pathname === "/faq" ? "text-primary font-semibold" : ""
+                  }`}
               >
                 FAQ
               </Link>
 
               <Link
                 href="/contact-us"
-                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${
-                  pathname === "/contact" ? "text-primary font-semibold" : ""
-                }`}
+                className={`text-gray-600 hover:text-gray-900 text-[18px] transition-colors relative ${pathname === "/contact" ? "text-primary font-semibold" : ""
+                  }`}
               >
                 Contact Us
               </Link>
@@ -103,7 +96,7 @@ export function Navigation() {
             <div className="md:hidden">
               <Button
                 type="text"
-                icon={isOpen ? <CloseOutlined /> : <MenuOutlined />}
+                icon={isOpen ? <CloseOutlined style={{ fontSize: '28px' }} /> : <MenuOutlined style={{ fontSize: '28px' }} />}
                 onClick={() => setIsOpen((prev) => !prev)}
                 aria-label={isOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isOpen}
@@ -128,79 +121,73 @@ export function Navigation() {
         className="md:hidden"
         id="mobile-menu"
       >
-      <div className="py-4 space-y-2">
-  <Link
-    href="/"
-    onClick={() => setIsOpen(false)}
-    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
-      pathname === "/"
-        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
-        : "text-gray-600 hover:text-gray-900"
-    }`}
-  >
-    Home
-  </Link>
+        <div className="py-4 space-y-2">
+          <Link
+            href="/"
+            onClick={() => setIsOpen(false)}
+            className={`block px-4 py-3 text-[18px] font-medium transition-colors ${pathname === "/"
+                ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+                : "text-gray-600 hover:text-gray-900"
+              }`}
+          >
+            Home
+          </Link>
 
-  <Link
-    href="/about-us"
-    onClick={() => setIsOpen(false)}
-    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
-      pathname === "/about-us"
-        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
-        : "text-gray-600 hover:text-gray-900"
-    }`}
-  >
-    About Us
-  </Link>
+          <Link
+            href="/about-us"
+            onClick={() => setIsOpen(false)}
+            className={`block px-4 py-3 text-[18px] font-medium transition-colors ${pathname === "/about-us"
+                ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+                : "text-gray-600 hover:text-gray-900"
+              }`}
+          >
+            About Us
+          </Link>
 
-  <Link
-    href="/skills"
-    onClick={() => setIsOpen(false)}
-    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
-      pathname === "/skills"
-        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
-        : "text-gray-600 hover:text-gray-900"
-    }`}
-  >
-    My Skills
-  </Link>
+          <Link
+            href="/skills"
+            onClick={() => setIsOpen(false)}
+            className={`block px-4 py-3 text-[18px] font-medium transition-colors ${pathname === "/skills"
+                ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+                : "text-gray-600 hover:text-gray-900"
+              }`}
+          >
+            My Skills
+          </Link>
 
-  <Link
-    href="/projects"
-    onClick={() => setIsOpen(false)}
-    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
-      pathname === "/projects"
-        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
-        : "text-gray-600 hover:text-gray-900"
-    }`}
-  >
-    Projects
-  </Link>
+          <Link
+            href="/projects"
+            onClick={() => setIsOpen(false)}
+            className={`block px-4 py-3 text-[18px] font-medium transition-colors ${pathname === "/projects"
+                ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+                : "text-gray-600 hover:text-gray-900"
+              }`}
+          >
+            Projects
+          </Link>
 
-  <Link
-    href="/faq"
-    onClick={() => setIsOpen(false)}
-    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
-      pathname === "/faq"
-        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
-        : "text-gray-600 hover:text-gray-900"
-    }`}
-  >
-    FAQ
-  </Link>
+          <Link
+            href="/faq"
+            onClick={() => setIsOpen(false)}
+            className={`block px-4 py-3 text-[18px] font-medium transition-colors ${pathname === "/faq"
+                ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+                : "text-gray-600 hover:text-gray-900"
+              }`}
+          >
+            FAQ
+          </Link>
 
-  <Link
-    href="/contact-us"
-    onClick={() => setIsOpen(false)}
-    className={`block px-4 py-3 text-[18px] font-medium transition-colors ${
-      pathname === "/contact-us"
-        ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
-        : "text-gray-600 hover:text-gray-900"
-    }`}
-  >
-    Contact Us
-  </Link>
-</div>
+          <Link
+            href="/contact-us"
+            onClick={() => setIsOpen(false)}
+            className={`block px-4 py-3 text-[18px] font-medium transition-colors ${pathname === "/contact-us"
+                ? "text-primary font-semibold bg-gray-50 border-l-4 border-primary"
+                : "text-gray-600 hover:text-gray-900"
+              }`}
+          >
+            Contact Us
+          </Link>
+        </div>
 
 
       </Drawer>
