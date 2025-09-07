@@ -51,13 +51,13 @@ export function About() {
             <Row gutter={[16, 16]} className="mt-10">
               <Col span={8}>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-1">50+</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-1">20+</div>
                   <div className="text-gray-600 text-sm">Projects Completed</div>
                 </div>
               </Col>
               <Col span={8}>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-1">25+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-1">10+</div>
                   <div className="text-gray-600 text-sm">Happy Clients</div>
                 </div>
               </Col>
