@@ -68,6 +68,16 @@ const ProjectPage: React.FC = () => {
       liveUrl: "https://example.com",
       githubUrl: "https://github.com/shahzadali50/Lacuna_Marketplace",
     },
+    {
+      title: "Realestate",
+      description:
+        "Custom CMS built for content creators with drag-and-drop page builder, SEO optimization, and multi-user support. Designed with modern UI/UX principles.",
+      image: "/assets/images/projects/property.png",
+      technologies: ["Laravel", "React.js", "MySQL", "Tailwind CSS", "Redis"],
+      features: ["Page Builder", "SEO Tools", "Multi-user Support", "Media Management", "Analytics Dashboard"],
+      liveUrl: "https://realestate.noahpackaging.com.au/admin/login",
+      githubUrl: "https://github.com/shahzadali50/Lacuna_Marketplace",
+    }
   ]
   return (
     <>
