@@ -28,11 +28,11 @@ export function Banner() {
             <Title level={1} className="font-48px" style={{ marginBottom: 24 }}>
               Build Fast <br />
               <span className="text-primary">Applications</span> <br />
-              with Laravel + Vue Js
+              with Laravel + React Js
             </Title>
 
             <Paragraph style={{ fontSize: 18, color: "#595959" }}>
-              PHP Laravel Developer and Full-Stack Engineer with a focus on crafting secure, scalable, and high-performance web applications. Proficient in Laravel and Vue.js.
+              PHP Laravel Developer and Full-Stack Engineer with a focus on crafting secure, scalable, and high-performance web applications. Proficient in Laravel and React.js.
             </Paragraph>
             <Paragraph style={{ fontSize: 18, color: "#595959", marginBottom: 32 }}>
               Demonstrated expertise in handling large datasets, integrating complex APIs, and delivering enterprise-grade solutions.  

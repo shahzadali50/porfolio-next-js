@@ -51,7 +51,7 @@ export function Footer() {
               Shahzad<span className="text-primary">Ali</span>
             </h3>
             <p className="text-gray-400 mb-4 leading-relaxed">
-              Full-Stack Developer | Expert in Laravel & Vue.js
+              Full-Stack Developer | Expert in Laravel & React.js
               Building secure, scalable, and user-friendly web applications
               with clean code.
             </p>
@@ -125,7 +125,7 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <span>© {currentYear} Crafted with</span>
             <HeartFilled className="text-primary" />
-            <span>Laravel & Vue.js</span>
+            <span>Laravel & React.js</span>
           </div>
         </div>
       </div>
