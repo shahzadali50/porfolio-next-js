@@ -5,7 +5,6 @@ import Image from "next/image"
 const AboutUs: React.FC = () => {
   return (
     <>
-     
       <section id="about" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <Row gutter={[48, 48]} align="middle">
