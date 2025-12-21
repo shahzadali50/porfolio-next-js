@@ -15,7 +15,7 @@
     "@emailjs/browser": "^4.4.1",
     "antd": "^5.26.1",
     "framer-motion": "^12.18.1",
-    "next": "15.3.3",
+    "next": "15.3.8",
     "nextjs-toploader": "^3.8.16",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
