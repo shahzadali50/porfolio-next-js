@@ -46,6 +46,7 @@ const AboutUs: React.FC = () => {
                 ))}
               </div>
             </div> */}
+
             <Row gutter={[16, 16]} className="mt-10">
               <Col span={8}>
                 <div className="text-center">
