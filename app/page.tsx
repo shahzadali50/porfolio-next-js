@@ -19,7 +19,6 @@ export default function Home() {
     <ProjectPage/>
     <FAQ/>
     <ContactUs/>
-
     </>
   );
 }
