@@ -83,8 +83,7 @@ export default function RootLayout({
          {/* Favicon */}
          <link rel="icon" href="/assets/images/projects/oxo.png" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
           <AntdRegistry>
           <NextTopLoader />
