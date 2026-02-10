@@ -13,7 +13,7 @@ const AboutUs: React.FC = () => {
           <Col xs={24} lg={12}>
           <h2 className="block lg:hidden font-36px text-gray-900">About Me</h2>
           <Image
-              src="/assets/images/shahzad-ali.png"
+              src="/assets/images/shahzad-ali-2.jpeg"
               alt="Developer Profile"
               className="object-cover"
               width={500} // Specify the width (in pixels)
